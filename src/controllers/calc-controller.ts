@@ -3,12 +3,12 @@ import CalcService from "../services/calc-service.js";
 
 const calcService = new CalcService();
 
-export const getAddRes = async (req: Request, res: Response) => {
+export const getAddRes = async (req: Request, res: Response):Promise<void> => {
     try {
         const { num1, num2 } = req.body;
 
         if (isNaN(num1) || isNaN(num2)) {
-            return res.status(400).json({
+            res.status(400).json({
                 error: "Des nombres invalides.",
             });
         }
@@ -24,12 +24,12 @@ export const getAddRes = async (req: Request, res: Response) => {
     }
 };
 
-export const getSubRes = async (req: Request, res: Response) => {
+export const getSubRes = async (req: Request, res: Response): Promise<void> => {
     try {
         const { num1, num2 } = req.body;
 
         if (isNaN(num1) || isNaN(num2)) {
-            return res.status(400).json({
+            res.status(400).json({
                 error: "Des nombres invalides.",
             });
         }
@@ -45,12 +45,12 @@ export const getSubRes = async (req: Request, res: Response) => {
     }
 };
 
-export const getMultRes = async (req: Request, res: Response) => {
+export const getMultRes = async (req: Request, res: Response):Promise<void> => {
     try {
         const { num1, num2 } = req.body;
 
         if (isNaN(num1) || isNaN(num2)) {
-            return res.status(400).json({
+            res.status(400).json({
                 error: "Des nombres invalides.",
             });
         }
@@ -66,18 +66,18 @@ export const getMultRes = async (req: Request, res: Response) => {
     }
 };
 
-export const getDivRes = async (req: Request, res: Response) => {
+export const getDivRes = async (req: Request, res: Response):Promise<void> => {
     try {
         const { num1, num2 } = req.body;
 
         if (isNaN(num1) || isNaN(num2)) {
-            return res.status(400).json({
+            res.status(400).json({
                 error: "Des nombres invalides.",
             });
         }
 
         if (num2 == 0) {
-            return res.status(500).json({
+            res.status(500).json({
                 error: "La division par zero est interdit.",
             });
         }
