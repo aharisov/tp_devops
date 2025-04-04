@@ -46,6 +46,7 @@
 
 ## Strcuture de l'app
 
+```bash
 projet/
 ├── src/
 │   ├── controllers/        // Aucune logique métier : reçoit la requête et appelle le service
@@ -65,6 +66,7 @@ projet/
 ├── tsconfig.json
 ├── package.json
 └── README.md
+```
 
 ## Le flux de données pour une requête (après réalisation de BD)
 
